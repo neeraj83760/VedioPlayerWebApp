@@ -49,10 +49,32 @@ video.addEventListener('ended', showPlayIcon);
 
 // Update the Progessbar as the Video Plays
 
+// Calculate display time format 
+
+function displayTime(time){
+
+
+    const minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    
+    seconds = seconds > 9 ? seconds : `0${seconds}`;
+    // console.log(minutes, seconds); 
+
+    return `${minutes}: ${seconds}`;
+
+
+}
+
 function updateProgess(){
 
     // console.log('CurrentTime', video.currentTime, 'Duration', video.duration);
     progressBar.style.width = `${(video.currentTime / video.duration) * 100}%` 
+
+    currentTime.textContent = `${displayTime(video.currentTime)} / `;
+
+    duration.textContent  = `${displayTime(video.duration)}`;
+    
+    
     
 }
 
