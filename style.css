@@ -45,7 +45,7 @@ video {
 .show-controls {
   width: 100%;
   height: 30%;
-  background: dodgerblue;
+  /* background: dodgerblue; */
   z-index: 2;
   position: absolute;
   bottom: 0;
@@ -63,6 +63,18 @@ video {
   z-index: 5;
   display: flex;
   justify-content: space-between;
+  /* To make the controls invisible we will set its property to 0 */
+  opacity: 0;
+  /* 0.5s and 2s is the delay  */
+  transition: all 0.5s ease-out 2s;
+
+}
+
+/* Below line means wehever we hover over show controls container we will modify the sytle of controls container */
+.show-controls:hover .controls-container{
+
+  opacity: 1;
+  transition: all 0.2s ease-out;
 
 }
 
