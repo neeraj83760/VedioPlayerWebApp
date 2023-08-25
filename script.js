@@ -74,7 +74,7 @@ function updateProgess(){
     // console.log('CurrentTime', video.currentTime, 'Duration', video.duration);
     progressBar.style.width = `${(video.currentTime / video.duration) * 100}%` 
 
-    currentTime.textContent = `${displayTime(video.currentTime)} / `;
+    currentTime.textContent = `${displayTime(video.currentTime)}/ `;
 
     duration.textContent  = `${displayTime(video.duration)}`;
     

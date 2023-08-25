@@ -290,6 +290,7 @@ select > option {
   }
 
   .time {
+    margin-top: 3px;
     font-size: 9px;
   }
 }
