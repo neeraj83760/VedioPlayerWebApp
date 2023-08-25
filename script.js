@@ -18,6 +18,8 @@ const duration  = document.querySelector('.time-duration')
 
 const fullscreenBtn = document.querySelector('.fullsreen')
 
+const speed = document.querySelector('.player-speed')
+
 // Play & Pause ----------------------------------- //
 
 function showPlayIcon(){
@@ -161,6 +163,13 @@ function toggleMute(){
 
 // Change Playback Speed -------------------- //
 
+function changeSpeed(){
+
+    // console.log('video playback rate', video.playbackRate);
+    // console.log('selected value', speed.value)
+
+    video.playbackRate = speed.value;
+}
 
 
 // Fullscreen ------------------------------- //
@@ -182,6 +191,7 @@ volumeRange.addEventListener('click', changeVolume);
 
 volumeIcon.addEventListener('click',toggleMute);
 
+speed.addEventListener('change', changeSpeed)
 
 
 
