@@ -78,6 +78,18 @@ function updateProgess(){
     
 }
 
+// Click to Seek within the Video 
+
+function setProgress(e){
+
+    // console.log(e);
+    const newTime = e.offsetX / progressRange.offsetWidth;
+    progressBar.style.width = `${newTime * 100}`;
+    video.currentTime = newTime * video.duration
+    // console.log(newTime);
+
+}
+
 // Volume Controls --------------------------- //
 
 
@@ -97,7 +109,11 @@ video.addEventListener('click', togglePlay);
 
 video.addEventListener('timeupdate', updateProgess)
 
-video.addEventListener('canplay', updateProgess); 
+video.addEventListener('canplay', updateProgess);
+
+progressRange.addEventListener('click', setProgress)
+
+
 
 
 
